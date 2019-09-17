@@ -56,5 +56,9 @@ public class AboutFile {
 		System.out.println(new File("..").getAbsolutePath());
 		System.out.println(new File("..").getCanonicalPath());
 		
+		File[] root = File.listRoots();
+		for (File f : root) {
+			System.out.println(f);
+		}
 	}
 }
