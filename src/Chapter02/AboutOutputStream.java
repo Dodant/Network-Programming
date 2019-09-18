@@ -3,6 +3,7 @@ import java.io.*;
 
 public class AboutOutputStream {
 	public static void main(String[] args) throws IOException {
+		
 		FileOutputStream fos1 = new FileOutputStream("file02.txt");
 //		for (int i = 33; i < 33 + 125; i++) // ASCII
 //			fos.write(i);
