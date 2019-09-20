@@ -10,7 +10,7 @@ public class Buffered {
 		long start = new Date().getTime();
 		
 		FileOutputStream fos = new FileOutputStream("numbers.dat");
-		BufferedOutputStream bos = new BufferedOutputStream(fos);
+		BufferedOutputStream bos = new BufferedOutputStream(fos); // <- Wrapping, Chaining / High-Level Stream
 		for(int i = from; i < to; i++)
 			bos.write(i);
 		bos.flush();
