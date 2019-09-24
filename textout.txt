@@ -1,0 +1,4 @@
+true
+-128
+0.9
+java.lang.Object@7852e922
