@@ -8,4 +8,4 @@
 * Concurrency - Thread
 * Lambda Expression
 
-## Class Hierachry
+## Class Hierarchy
