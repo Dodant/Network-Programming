@@ -49,11 +49,8 @@ public class EvenArrayLengthInterface {
 		arr1.add(1); arr1.add(2); arr1.add(3); arr1.add(4); arr1.add(5);
 		arr2.add(100); arr2.add(108); arr2.add(102); arr2.add(103);
 
-		System.out.println(EvenArrayLength.length(arr1, arr2));
+		System.out.println(arr1);
+		System.out.println(arr2);
+		System.out.println("# of Even = " + EvenArrayLength.length(arr1, arr2));
 	}
 }
-
-//public static void main(String[] args) {
-//ExecutorService service = Executors.newFixedThreadPool(2);
-//
-//}
