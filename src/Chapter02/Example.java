@@ -19,12 +19,15 @@ public class Example {
 		System.out.println("getParent() = " + f.getParent());
 		
 		// 디렉터리 생성 
-		System.out.println(System.getProperty("user.dir"));
 //		File file1 = new File("mother//");
 //		File file2 = new File("father//son//");
 //		file1.mkdir();
 //		file2.mkdirs();
-
+		
+		System.out.println(java.io.File.separator);
+		System.out.println(java.io.File.separatorChar);
+		System.out.println(java.io.File.pathSeparator);
+		System.out.println(java.io.File.pathSeparatorChar);
 
 	}
 }
