@@ -9,7 +9,7 @@ public class Buffered {
 		int to = 100000;
 		long start = new Date().getTime();
 		
-		FileOutputStream fos = new FileOutputStream("numbers.dat");
+		FileOutputStream fos = new FileOutputStream("numbers.txt");
 		BufferedOutputStream bos = new BufferedOutputStream(fos); // <- Wrapping, Chaining / High-Level Stream
 		for(int i = from; i < to; i++)
 			bos.write(i);
@@ -17,7 +17,7 @@ public class Buffered {
 		bos.close();
 		
 		int bytes = 0;
-		FileInputStream fis = new FileInputStream("numbers.dat");
+		FileInputStream fis = new FileInputStream("numbers.txt");
 		BufferedInputStream bis = new BufferedInputStream(fis);
 		int input = bis.read();
 		while(input != -1) {

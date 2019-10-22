@@ -9,13 +9,13 @@ public class NonBuffered {
 		int to = 100000;
 		long start = new Date().getTime();
 		
-		FileOutputStream fos = new FileOutputStream("numbers.dat");
+		FileOutputStream fos = new FileOutputStream("numbers.txt");
 		for (int i = from; i < to; i++)
 			fos.write(i);
 		fos.close();
 		
 		int bytes = 0;
-		FileInputStream fis = new FileInputStream("numbers.dat");
+		FileInputStream fis = new FileInputStream("numbers.txt");
 		int input = fis.read();
 		while (input != -1) {
 			bytes++;

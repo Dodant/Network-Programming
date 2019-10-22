@@ -21,7 +21,7 @@ public class DataStreamExample { // FromTextToBinary
 		out.close();
 
 		
-		DataOutputStream dos = new DataOutputStream(new FileOutputStream("1000.dat"));
+		DataOutputStream dos = new DataOutputStream(new FileOutputStream("1000.txt"));
 		dos.writeInt(18);
 		dos.writeInt(-18);
 //		int a = (int) (65 * Math.pow(2, 24) + 66 * Math.pow(2, 16) + 67 * Math.pow(2, 8) + 68);
@@ -29,7 +29,7 @@ public class DataStreamExample { // FromTextToBinary
 //		int b = (int) (0x3C * Math.pow(2, 24) + 0x3D * Math.pow(2, 16) + 0x3E * Math.pow(2, 8) + 0x3F);
 //		dos.writeInt(a);
 //		dos.close();
-		FileInputStream fis = new FileInputStream("1000.dat");
+		FileInputStream fis = new FileInputStream("1000.txt");
 		int total = 0;
 		int j = fis.read();
 		while (j != -1) {
@@ -37,7 +37,7 @@ public class DataStreamExample { // FromTextToBinary
 			System.out.print(j + " ");
 			j = fis.read();
 		}
-		System.out.println(total + " bytes");
+		System.out.println(total + "bytes");
 		
 		
 		int total1 = 0;

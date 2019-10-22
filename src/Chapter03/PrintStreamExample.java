@@ -19,7 +19,7 @@ public class PrintStreamExample {
 			System.out.write(1);	// ASCII 00000001
 			System.out.flush();
 			
-			PrintStream ps1 = new PrintStream(new FileOutputStream( "write.txt"));
+			PrintStream ps1 = new PrintStream(new FileOutputStream("write.txt"));
 			ps1.write(127);
 			PrintStream ps2 = new PrintStream(new FileOutputStream("print.txt"));
 			ps2.print(127);

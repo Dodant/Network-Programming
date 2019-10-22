@@ -13,5 +13,18 @@ public class ReadLine {
 			System.out.println(str);
 			str = br.readLine();
 		}
+//		readCharacterData();
 	}
+	public static void readCharacterData() throws IOException {
+	    int c;
+	    int count = 0;
+	    InputStreamReader link = new InputStreamReader(System.in); 
+	    BufferedReader br  = new BufferedReader( link);
+	    while (  (c = br.read())  != -1) {
+	        count++;
+	        System.out.println(c + "  "+(char)c);
+	    }
+	    System.out.println("Number of Characters: "+count);
+	}
+
 }
