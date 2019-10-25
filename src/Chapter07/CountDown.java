@@ -33,6 +33,16 @@ public class CountDown implements Runnable {
 	}
 
 	public static void main(String[] args) {
-		new Thread(new CountDown()).start();
+		Thread t = new Thread(() -> {
+			System.out.println("Counting Down" + " ");
+			for (int i = 0; i < 10; i++) {
+				System.out.print(10 - i + " ");
+			}
+			System.out.println("\nShot");
+		}, "Count Down");
+		t.start();
+		
+		System.out.println(t.getName());
+		System.out.println("outer " + Thread.currentThread().getName());
 	}
 }

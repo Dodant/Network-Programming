@@ -3,7 +3,6 @@ import java.io.*;
 import java.util.Date;
 
 public class Buffered {
-
 	public static void main(String[] args) throws Exception{
 		int from = 0;
 		int to = 100000;
@@ -20,7 +19,7 @@ public class Buffered {
 		FileInputStream fis = new FileInputStream("numbers.txt");
 		BufferedInputStream bis = new BufferedInputStream(fis);
 		int input = bis.read();
-		while(input != -1) {
+		while (input != -1) {
 			bytes++;
 			input = bis.read();
 		}

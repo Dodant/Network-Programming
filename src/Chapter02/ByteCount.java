@@ -20,9 +20,9 @@ public class ByteCount {
 //		int total = 0;
 //		int j = fis.read();
 //		while (j != -1) {
+//	System.out.print((char)j);
 //			total++;
 //			j = fis.read();
-//			System.out.print((char)j);
 //		}
 //		System.out.println(total + " bytes");
 //	}

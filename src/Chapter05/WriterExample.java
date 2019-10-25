@@ -16,13 +16,16 @@ public class WriterExample {
 		w.write("KOREA한국"); // write(String)
 		w.write("KOREA한국", 0, 7); // write(String, int, int)
 		w.flush(); // flush()를 호출하지 않으면 출력 결과 안 보인다
+//		w.close();
 
 		System.out.println(System.getProperty("file.encoding"));
 
-		OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream("hanguel.txt"), "UTF-16");
+		OutputStreamWriter osw = new OutputStreamWriter(
+								 new FileOutputStream("hanguel.txt"), "UTF-16");
 		osw.write("자바의 OutputStreamWriter 스트림 사용 연습\n");
 		osw.write("자바의 OutputStreamWriter 스트림 사용 연습");
 		System.out.println(osw.getEncoding());
+//		osw.flush();
 		osw.close();
 
 		File file = new File("alphabet.txt");

@@ -14,7 +14,8 @@ public class ReturnDigestUserInterface {
       StringBuilder result = new StringBuilder(filename);
       result.append(": ");
       byte[] digest = dr.getDigest();
-      //result.append(DatatypeConverter.printHexBinary(digest));
+//    result.append(DatatypeConverter.printHexBinary(digest));
+      result.append(digest);
       System.out.println(result); 
     }
   }

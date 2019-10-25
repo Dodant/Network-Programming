@@ -21,9 +21,9 @@ public class NonBuffered {
 			bytes++;
 			input = fis.read();
 		}
-		System.out.println("Tot = " + bytes);
 		fis.close();
 		
+		System.out.println("Tot = " + bytes);
 		long end = new Date().getTime();
 		System.out.println("Elapsed Time = " + (end - start));
 	}
