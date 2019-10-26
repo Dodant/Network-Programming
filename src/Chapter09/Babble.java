@@ -12,8 +12,7 @@ class Babble extends Thread {
 	public void run() {
 		for (int i = 0; i < times; i++) {
 			System.out.println(word);
-			if (doYield)
-				yield(); // give another thread a chance
+			if (doYield) yield(); // give another thread a chance
 		}
 	}
 

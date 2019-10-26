@@ -17,11 +17,8 @@ class Switch {
 
 	public synchronized void on() {
 		while (inUse) {
-			try {
-				wait();
-			} catch (InterruptedException e) {
-			}
-			;
+			try { wait();} 
+			catch (InterruptedException e) {};
 		}
 		inUse = true;
 	}
@@ -42,10 +39,8 @@ class Second implements Runnable {
 
 	public void run() {
 		while (true) {
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-			}
+			try { Thread.sleep(1000);} 
+			catch (InterruptedException e) {}
 			if (seconds == 59) {
 				swtch.off();
 				seconds = 0;
@@ -68,8 +63,7 @@ class Minute implements Runnable {
 	public void run() {
 		while (true) {
 			swtch.on();
-			if (minutes == 59)
-				minutes = 0;
+			if (minutes == 59) minutes = 0;
 			else {
 				minutes++;
 				System.out.println(minutes + " minutes");

@@ -15,10 +15,8 @@ public class WaitAndNotify {
 		private Object lockObject = new Object();
 
 		public void run() {
-			if ((Thread.currentThread().getName()).equals("WAIT"))
-				sun();
-			if ((Thread.currentThread().getName()).equals("NOTIFY"))
-				moon();
+			if ((Thread.currentThread().getName()).equals("WAIT")) sun();
+			if ((Thread.currentThread().getName()).equals("NOTIFY")) moon();
 		}
 
 		public void sun() {

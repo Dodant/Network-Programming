@@ -14,10 +14,8 @@ public class WaitNotifyOK {
 		private boolean OK = false;
 
 		public void run() {
-			if ((Thread.currentThread().getName()).equals("WAIT"))
-				sun();
-			if ((Thread.currentThread().getName()).equals("NOTIFY"))
-				moon();
+			if ((Thread.currentThread().getName()).equals("WAIT")) sun();
+			if ((Thread.currentThread().getName()).equals("NOTIFY")) moon();
 		}
 
 		public void sun() {
