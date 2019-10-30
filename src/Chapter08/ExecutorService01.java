@@ -8,9 +8,11 @@ import java.util.concurrent.Future;
 public class ExecutorService01 {
 	public static void main(String[] args) throws Exception {
 		ExecutorService executorService = Executors.newFixedThreadPool(10);
-		Future future = executorService.submit(() -> {
-			System.out.println("Asynchronous Callable");
-			return "Callable Result";
+		Future future = executorService.submit(new Callable(){
+			public Object call() throws Exception{
+				System.out.println("Asynchronous Callable");
+				return "Callable Result";
+			}
 		});
 		System.out.println("future.get() = " + future.get());
 		executorService.shutdown();
