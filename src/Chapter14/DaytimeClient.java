@@ -7,8 +7,8 @@ public class DaytimeClient {
 
 	public static void main(String[] args) {
 		try {
-			InetAddress addr = InetAddress.getByName("168.131.180.214");
-			Socket socket = new Socket(addr, 13);
+			InetAddress addr = InetAddress.getByName("168.131.180.209");
+			Socket socket = new Socket(addr, 7112);
 			socket.setSoTimeout(15000);
 			InputStream in = socket.getInputStream();
 			InputStreamReader reader = new InputStreamReader(in, "ASCII");
