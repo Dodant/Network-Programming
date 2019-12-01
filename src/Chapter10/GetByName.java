@@ -8,7 +8,7 @@ public class GetByName {
 	public static void main(String[] args) {
 		try {
 			InetAddress address = InetAddress.getByName("www.jnu.ac.kr");
-			System.out.println(address);
+			System.out.println(address.getHostAddress());
 			address = InetAddress.getByName("168.131.31.206"); // 권장하지 않음
 			System.out.println(address.getHostName());
 

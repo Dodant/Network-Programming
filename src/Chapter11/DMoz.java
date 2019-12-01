@@ -17,7 +17,7 @@ public class DMoz {
 		query.add("q", target);
 		System.out.println(query);
 		try {
-			URL u = new URL("https://search.daum.net/search?" + query);
+			URL u = new URL("https://curlie.org/search?lang=en&stime=92452189" + query);
 			try (InputStream in = new BufferedInputStream(u.openStream())) {
 				InputStreamReader theHTML = new InputStreamReader(in);
 				int c;
