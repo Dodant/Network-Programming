@@ -15,10 +15,9 @@ public class MySimpleWebClient {
 		try {
 			sock = new Socket("www.jnu.ac.kr", 80);
 			out = new OutputStreamWriter(sock.getOutputStream(), "UTF-8");
-
 			br = new BufferedReader(new InputStreamReader(sock.getInputStream(), "UTF-8"));
 
-			out.write("GET / HTTP/1.0\r\n\r\n");
+			out.write("GET / HTTP/1.1\r\n\r\n");
 			out.flush();
 
 			int count = 0;
