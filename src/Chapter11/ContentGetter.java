@@ -11,6 +11,7 @@ public class ContentGetter {
 			URL u = new URL("https://www.jnu.ac.kr");
 			Object o = u.getContent();
 			System.out.println("I got a " + o.getClass().getName());
+			
 		} catch (MalformedURLException ex) {
 			System.err.println("www.jnu.ac.kr" + " is not a parseable URL");
 		} catch (IOException ex) {
