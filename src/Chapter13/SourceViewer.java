@@ -9,11 +9,9 @@ public class SourceViewer {
 		try {
 			// Open the URLConnection for reading
 			URL u = new URL(url);
-			URLConnection uc = u.openConnection();
-			InputStream raw = uc.getInputStream();
-			InputStream buffer = new BufferedInputStream(raw);
-			// chain the InputStream to a Reader
-			Reader r = new InputStreamReader(buffer);
+			Reader r = new InputStreamReader(
+						new BufferedInputStream(
+						 u.openConnection().getInputStream()));
 			int c;
 			while ((c = r.read()) != -1) {
 				System.out.print((char) c);
@@ -23,5 +21,5 @@ public class SourceViewer {
 		} catch (IOException ex) {
 			System.err.println(ex);
 		}
-	} // end main
-} // end SourceViewer
+	}
+}
