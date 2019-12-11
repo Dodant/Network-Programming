@@ -11,43 +11,34 @@ public class DictClient {
 
 	public static void main(String[] args) {
 
-		Socket socket = null;
-		try {
-			socket = new Socket(SERVER, PORT); // 서버에 연결을 시도한다. 
+		try (Socket socket = new Socket(SERVER, PORT)){
+			socket.setSoTimeout(TIMEOUT);
 			
 			System.out.println(socket.getInetAddress());
 			System.out.println(socket.getPort());
 			System.out.println(socket.getLocalAddress());
 			System.out.println(socket.getLocalPort());
 			
-			socket.setSoTimeout(TIMEOUT);
-			OutputStream out = socket.getOutputStream();
-			Writer writer = new OutputStreamWriter(out, "UTF-8");
-			writer = new BufferedWriter(writer);
-			InputStream in = socket.getInputStream();
-			BufferedReader reader = new BufferedReader(new InputStreamReader(in, "UTF-8"));
+			
+			BufferedWriter writer = new BufferedWriter(
+									new OutputStreamWriter(
+									socket.getOutputStream(), "UTF-8"));
+			BufferedReader reader = new BufferedReader(
+									new InputStreamReader(
+									socket.getInputStream(), "UTF-8"));
 
-			for (String word : args) {
-				define(word, writer, reader);
-			}
+			for (String word : args) define(word, writer, reader);
 
 			writer.write("quit\r\n");
 			writer.flush();
+			
 		} catch (IOException ex) {
 			System.err.println(ex);
-		} finally { // dispose
-			if (socket != null) {
-				try {
-					socket.close();
-				} catch (IOException ex) {
-					// ignore
-				}
-			}
-		}
+		} 
 	}
 
-	static void define(String word, Writer writer, BufferedReader reader)
-			throws IOException, UnsupportedEncodingException {
+	static void define(String word, Writer writer, BufferedReader reader) throws IOException, UnsupportedEncodingException {
+		
 		writer.write("DEFINE fd-eng-lat " + word + "\r\n");
 		writer.flush();
 

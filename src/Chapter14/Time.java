@@ -20,7 +20,6 @@ public class Time {
 		// converts between them.
 
 		long differenceBetweenEpochs = 2208988800L;
-
 		// If you'd rather not use the magic number, uncomment
 		// the following section which calculates it directly.
 		/*
