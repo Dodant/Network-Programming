@@ -13,10 +13,8 @@ public class MultithreadedDaytimeServer {
 			while (true) {
 				try {
 					Socket connection = server.accept();
-					Thread task = new DaytimeThread(connection);
-					task.start();
-				} catch (IOException ex) {
-				}
+					new DaytimeThread(connection).start();
+				} catch (IOException ex) {}
 			}
 		} catch (IOException ex) {
 			System.err.println("Couldn't start server");
@@ -34,17 +32,14 @@ public class MultithreadedDaytimeServer {
 		public void run() {
 			try {
 				Writer out = new OutputStreamWriter(connection.getOutputStream());
-				Date now = new Date();
-				out.write(now.toString() + "\r\n");
+				out.write(new Date().toString() + "\r\n");
 				out.flush();
 			} catch (IOException ex) {
 				System.err.println(ex);
 			} finally {
 				try {
 					connection.close();
-				} catch (IOException e) {
-					// ignore;
-				}
+				} catch (IOException e) {}
 			}
 		}
 	}

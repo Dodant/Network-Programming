@@ -29,7 +29,6 @@ public class EchoServer {
 			pw.close();
 			br.close();
 			sock.close();
-			server.close();
 		} catch (Exception e) {
 			System.out.println(e);
 		}

@@ -14,7 +14,7 @@ public class DaytimeServer {
 				try (Socket connection = server.accept()) {
 					Writer out = new OutputStreamWriter(connection.getOutputStream());
 					Date now = new Date();
-					out.write(now.toString() + "\r\n");
+					out.write("It's from my own server " + now.toString() + "\r\n");
 					out.flush();
 					connection.close();
 				} catch (IOException ex) {
