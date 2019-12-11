@@ -20,9 +20,10 @@ public class DaytimeUDPServer {
 
 					String daytime = new Date().toString();
 					byte[] data = daytime.getBytes("US-ASCII");
-					DatagramPacket response = new DatagramPacket(data, data.length, request.getAddress(),
-							request.getPort());
+					
+					DatagramPacket response = new DatagramPacket(data, data.length, request.getAddress(),request.getPort());
 					socket.send(response);
+					
 					audit.info(daytime + " " + request.getAddress());
 				} catch (IOException | RuntimeException ex) {
 					errors.log(Level.SEVERE, ex.getMessage(), ex);
