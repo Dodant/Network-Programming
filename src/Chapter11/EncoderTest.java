@@ -44,6 +44,7 @@ public class EncoderTest {
 			for (byte b : apple2)
 				System.out.print(Integer.toHexString(b&0xFF) + "");
 			System.out.println();
+			System.out.println(URLEncoder.encode(s, "MS949"));
 			
 
 			
